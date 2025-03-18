@@ -37,7 +37,7 @@ public class GUITrangChu extends javax.swing.JFrame {
         Color col = new Color(17,17,17);
         getContentPane().setBackground(col);
         loadIOSList();
-        loadANDROIDList();
+//        loadANDROIDList();
         tableIOS.setRowSelectionInterval(0, 0);
         String fileimg = (String) modelIOS.getValueAt(0, 6).toString().trim();
         ImageIcon imageIcon = new ImageIcon(fileimg);
@@ -72,15 +72,6 @@ public class GUITrangChu extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tableGioHang = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel6 = new javax.swing.JPanel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tableIOS = new javax.swing.JTable();
-        jPanel7 = new javax.swing.JPanel();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tableANDROID = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         panelHinhAnh = new javax.swing.JPanel();
@@ -97,6 +88,9 @@ public class GUITrangChu extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         buttonSearchMaKH = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tableIOS = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         buttonSP = new javax.swing.JButton();
@@ -150,6 +144,11 @@ public class GUITrangChu extends javax.swing.JFrame {
         textSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textSearchActionPerformed(evt);
+            }
+        });
+        textSearch.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                textSearchPropertyChange(evt);
             }
         });
 
@@ -242,90 +241,6 @@ public class GUITrangChu extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("GIỎ HÀNG");
-
-        jScrollPane1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jScrollPane1MouseClicked(evt);
-            }
-        });
-
-        tableIOS.setBackground(new java.awt.Color(242, 242, 242));
-        tableIOS.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Mã SP", "Tên Sản Phẩm", "Số lượng", "Đơn Giá", "Năm SX", "Phiên bản", "Img"
-            }
-        ));
-        tableIOS.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tableIOSMouseClicked(evt);
-            }
-        });
-        jScrollPane1.setViewportView(tableIOS);
-        if (tableIOS.getColumnModel().getColumnCount() > 0) {
-            tableIOS.getColumnModel().getColumn(0).setMaxWidth(65);
-            tableIOS.getColumnModel().getColumn(1).setPreferredWidth(150);
-        }
-
-        jScrollPane5.setViewportView(jScrollPane1);
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 580, Short.MAX_VALUE)
-            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 580, Short.MAX_VALUE))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 196, Short.MAX_VALUE)
-            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("IOS", jPanel6);
-
-        tableANDROID.setBackground(new java.awt.Color(242, 242, 242));
-        tableANDROID.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Mã SP", "Tên Sản Phẩm", "Số lượng", "Đơn Giá", "Năm SX", "Hãng", "Img"
-            }
-        ));
-        tableANDROID.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tableANDROIDMouseClicked(evt);
-            }
-        });
-        jScrollPane3.setViewportView(tableANDROID);
-        if (tableANDROID.getColumnModel().getColumnCount() > 0) {
-            tableANDROID.getColumnModel().getColumn(0).setMaxWidth(65);
-            tableANDROID.getColumnModel().getColumn(1).setPreferredWidth(150);
-        }
-
-        jScrollPane6.setViewportView(jScrollPane3);
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 580, Short.MAX_VALUE)
-            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 196, Short.MAX_VALUE)
-            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("ANDROID", jPanel7);
 
         jButton1.setBackground(new java.awt.Color(102, 102, 102));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -426,18 +341,40 @@ public class GUITrangChu extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Nhập khách hàng", panelKhachHang);
 
+        jScrollPane1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jScrollPane1MouseClicked(evt);
+            }
+        });
+
+        tableIOS.setBackground(new java.awt.Color(242, 242, 242));
+        tableIOS.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Mã SP", "Tên Sản Phẩm", "Số lượng", "Đơn Giá", "Năm SX", "Phiên bản", "Img"
+            }
+        ));
+        tableIOS.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableIOSMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tableIOS);
+        if (tableIOS.getColumnModel().getColumnCount() > 0) {
+            tableIOS.getColumnModel().getColumn(0).setMaxWidth(65);
+            tableIOS.getColumnModel().getColumn(1).setPreferredWidth(150);
+        }
+
+        jScrollPane5.setViewportView(jScrollPane1);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(textSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 607, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
-                        .addComponent(buttonSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -450,16 +387,21 @@ public class GUITrangChu extends javax.swing.JFrame {
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTabbedPane2))))
+                            .addComponent(jTabbedPane2)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(textSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 607, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addComponent(buttonSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(280, 280, 280)
+                        .addComponent(jLabel2)))
                 .addGap(43, 43, 43))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(280, 280, 280)
-                .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -473,8 +415,8 @@ public class GUITrangChu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
                             .addComponent(jButton1))
@@ -682,9 +624,9 @@ public class GUITrangChu extends javax.swing.JFrame {
     private void buttonAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAddActionPerformed
         // TODO add your handling code here:
         modelIOS = (DefaultTableModel) tableIOS.getModel();
-        modelADNROID = (DefaultTableModel) tableANDROID.getModel();
+//        modelADNROID = (DefaultTableModel) tableANDROID.getModel();
         int i=tableIOS.getSelectedRow();
-        int j=tableANDROID.getSelectedRow();
+        int j=0;
         if (i>=0){
             iOS sp = new iOS();
             sp.setMaSanPham( modelIOS.getValueAt(i, 0).toString());
@@ -723,7 +665,7 @@ public class GUITrangChu extends javax.swing.JFrame {
             modelGioHang.addRow(new Object[]{sp.getMaSanPham(), sp.getTenSanPham(), sl, sp.getDonGia(), sp.getNamSX(),sp.getHangSanXuat()});
             list.add(sp);
             BLLsp.BLLsuaSLAND(sp,newSL);
-            loadANDROIDList();
+//            loadANDROIDList();
             }
         }else{
             JOptionPane.showMessageDialog(this, "Thêm thất bại!");
@@ -737,8 +679,8 @@ public class GUITrangChu extends javax.swing.JFrame {
         modelIOS.addColumn("Số lượng");
         modelIOS.addColumn("Đơn giá");
         modelIOS.addColumn("Năm SX");
-        modelIOS.addColumn("Phiên bản");
-        modelIOS.addColumn("Img");
+        modelIOS.addColumn("NCC");
+        modelIOS.addColumn("Loại");
         tableIOS.setModel(modelIOS);
         column1 = tableIOS.getColumnModel().getColumn(1);
         column1.setPreferredWidth(150);
@@ -761,36 +703,36 @@ public class GUITrangChu extends javax.swing.JFrame {
         }
     }
     
-    public void loadANDROIDList(){
-        modelADNROID = new DefaultTableModel();
-        modelADNROID.addColumn("Mã SP");
-        modelADNROID.addColumn("Tên sản phẩm");
-        modelADNROID.addColumn("Số lượng");
-        modelADNROID.addColumn("Đơn giá");
-        modelADNROID.addColumn("Năm SX");
-        modelADNROID.addColumn("Hãng");
-        modelADNROID.addColumn("Img");
-        tableANDROID.setModel(modelADNROID);
-        column1 = tableANDROID.getColumnModel().getColumn(1);
-        column1.setPreferredWidth(200);
-        ArrayList<DTOSanPham> arr = new ArrayList<DTOSanPham>();
-        arr = BLLsp.BLLgetANDROID();
-        for(int i = 0; i < arr.size(); i++){
-            DTOSanPham sp = arr.get(i);
-            if(sp instanceof Android){
-                Android and = (Android) sp;
-                String masp = and.getMaSanPham();
-                String tensp = and.getTenSanPham();
-                Integer sl = and.getSoLuong();
-                Float dongia = and.getDonGia();
-                Integer nsx = and.getNamSX();
-                String hang = and.getHangSanXuat();
-                String img = and.getImg();
-                Object[] row = {masp,tensp,sl,dongia,nsx,hang,img};
-                modelADNROID.addRow(row);
-            }
-        }
-    }
+//    public void loadANDROIDList(){
+//        modelADNROID = new DefaultTableModel();
+//        modelADNROID.addColumn("Mã SP");
+//        modelADNROID.addColumn("Tên sản phẩm");
+//        modelADNROID.addColumn("Số lượng");
+//        modelADNROID.addColumn("Đơn giá");
+//        modelADNROID.addColumn("Năm SX");
+//        modelADNROID.addColumn("Hãng");
+//        modelADNROID.addColumn("Img");
+//        tableANDROID.setModel(modelADNROID);
+//        column1 = tableANDROID.getColumnModel().getColumn(1);
+//        column1.setPreferredWidth(200);
+//        ArrayList<DTOSanPham> arr = new ArrayList<DTOSanPham>();
+//        arr = BLLsp.BLLgetANDROID();
+//        for(int i = 0; i < arr.size(); i++){
+//            DTOSanPham sp = arr.get(i);
+//            if(sp instanceof Android){
+//                Android and = (Android) sp;
+//                String masp = and.getMaSanPham();
+//                String tensp = and.getTenSanPham();
+//                Integer sl = and.getSoLuong();
+//                Float dongia = and.getDonGia();
+//                Integer nsx = and.getNamSX();
+//                String hang = and.getHangSanXuat();
+//                String img = and.getImg();
+//                Object[] row = {masp,tensp,sl,dongia,nsx,hang,img};
+//                modelADNROID.addRow(row);
+//            }
+//        }
+//    }
     
     private void buttonBoHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBoHangActionPerformed
         // TODO add your handling code here:
@@ -816,7 +758,7 @@ public class GUITrangChu extends javax.swing.JFrame {
                 int slGH = Integer.valueOf(model.getValueAt(i, 2).toString());
                 int slupdate = sl + slGH;
                 BLLsp.BLLsuaSLAND(spAndroid, slupdate);
-                loadANDROIDList();
+//                loadANDROIDList();
                 list.remove(spAndroid);
             }
             model.removeRow(i);
@@ -844,36 +786,6 @@ public class GUITrangChu extends javax.swing.JFrame {
         }   
     }//GEN-LAST:event_buttonThanhToanActionPerformed
 
-    private void tableIOSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableIOSMouseClicked
-        // TODO add your handling code here:
-        labelIMG.setText("");
-        modelIOS = (DefaultTableModel) tableIOS.getModel();
-        int i = tableIOS.getSelectedRow();
-        if(i>=0){
-            String fileimg = (String) modelIOS.getValueAt(i, 6).toString().trim();
-            ImageIcon imageIcon = new ImageIcon(fileimg);
-            Image scaledImage = imageIcon.getImage().getScaledInstance(labelIMG.getWidth(), labelIMG.getHeight(), Image.SCALE_SMOOTH);
-            ImageIcon scaledImageIcon = new ImageIcon(scaledImage);
-            labelIMG.setIcon(scaledImageIcon);
-        }
-        tableANDROID.clearSelection();
-    }//GEN-LAST:event_tableIOSMouseClicked
-
-    private void tableANDROIDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableANDROIDMouseClicked
-        // TODO add your handling code here:
-        labelIMG.setText("");
-        modelADNROID = (DefaultTableModel) tableANDROID.getModel();
-        int i = tableANDROID.getSelectedRow();
-        if(i>=0){
-            String fileimg = (String) modelADNROID.getValueAt(i, 6).toString().trim();
-            ImageIcon imageIcon = new ImageIcon(fileimg);
-            Image scaledImage = imageIcon.getImage().getScaledInstance(labelIMG.getWidth(), labelIMG.getHeight(), Image.SCALE_SMOOTH);
-            ImageIcon scaledImageIcon = new ImageIcon(scaledImage);
-            labelIMG.setIcon(scaledImageIcon);
-        }
-        tableIOS.clearSelection();
-    }//GEN-LAST:event_tableANDROIDMouseClicked
-
     private void buttonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSearchActionPerformed
         // TODO add your handling code here:
         DTOSanPham sp = BLLsp.BLLtimSP(textSearch.getText().trim());
@@ -898,7 +810,7 @@ public class GUITrangChu extends javax.swing.JFrame {
             modelADNROID.addColumn("Đơn giá");
             modelADNROID.addColumn("Năm sản xuất");
             modelADNROID.addColumn("Hãng");
-            tableANDROID.setModel(modelADNROID);
+//            tableANDROID.setModel(modelADNROID);
             Object[] row = {and.getMaSanPham(),and.getTenSanPham(),and.getSoLuong(),and.getDonGia(),and.getNamSX(),and.getHangSanXuat()};
             modelADNROID.addRow(row);
         } else {
@@ -908,7 +820,7 @@ public class GUITrangChu extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        loadANDROIDList();
+//        loadANDROIDList();
         loadIOSList();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -921,11 +833,6 @@ public class GUITrangChu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textSearchActionPerformed
 
-    private void jScrollPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane1MouseClicked
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_jScrollPane1MouseClicked
-
     private void buttonSearchMaKHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSearchMaKHActionPerformed
         // TODO add your handling code here:
         DTOKhachHang khm = BLLkh.BLLtim(textMaKH.getText());
@@ -937,6 +844,29 @@ public class GUITrangChu extends javax.swing.JFrame {
                 conboboxGender.setSelectedItem(khm.getGender());
         }
     }//GEN-LAST:event_buttonSearchMaKHActionPerformed
+
+    private void jScrollPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jScrollPane1MouseClicked
+
+    private void tableIOSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableIOSMouseClicked
+        // TODO add your handling code here:
+        labelIMG.setText("");
+        modelIOS = (DefaultTableModel) tableIOS.getModel();
+        int i = tableIOS.getSelectedRow();
+        if(i>=0){
+            String fileimg = (String) modelIOS.getValueAt(i, 6).toString().trim();
+            ImageIcon imageIcon = new ImageIcon(fileimg);
+            Image scaledImage = imageIcon.getImage().getScaledInstance(labelIMG.getWidth(), labelIMG.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon scaledImageIcon = new ImageIcon(scaledImage);
+            labelIMG.setIcon(scaledImageIcon);
+        }
+//        tableANDROID.clearSelection();
+    }//GEN-LAST:event_tableIOSMouseClicked
+
+    private void textSearchPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_textSearchPropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textSearchPropertyChange
 
     /**
      * @param args the command line arguments
@@ -1005,22 +935,16 @@ public class GUITrangChu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JLabel labelIMG;
     private javax.swing.JButton logoutButton;
     private javax.swing.JPanel panelHinhAnh;
     private javax.swing.JPanel panelKhachHang;
-    private javax.swing.JTable tableANDROID;
     private javax.swing.JTable tableGioHang;
     private javax.swing.JTable tableIOS;
     private javax.swing.JTextField textDiaChi;

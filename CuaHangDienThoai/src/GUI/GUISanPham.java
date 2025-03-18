@@ -1303,10 +1303,7 @@ public class GUISanPham extends javax.swing.JFrame {
             }
             else if(textHang.getText().isEmpty()){
                 JOptionPane.showMessageDialog(null, "Mời bạn nhập phiên bản!");
-            }
-//            else if (textBaohanhAND.getText().isEmpty() || textMausacAND.getText().isEmpty() ||textManhinhAND.getText().isEmpty() ||textPinAND.getText().isEmpty() || textRamAND.getText().isEmpty()|| textRomAND.getText().isEmpty()||textThietkeAND.getText().isEmpty() || textCameraAND.getText().isEmpty()|| textXuatxuAND.getText().isEmpty() ||textKhoiluongAND.getText().isEmpty() || textIMEIAND.getText().isEmpty()){
-//                JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ chi tiết sản phẩm");
-//            }     
+            } 
             else{
                 Android and = new Android();
                 and.setMaSanPham(textMaSanPhamANDROID.getText());
@@ -1324,20 +1321,6 @@ public class GUISanPham extends javax.swing.JFrame {
                 textDonGiaANDROID.setText("");
                 textNSXANDROID.setText("");
                 textHang.setText("");
-//                ChiTietSanPham ctspand = new ChiTietSanPham();
-//                ctspand.setMaSP(textMaSanPhamANDROID.getText());
-//                ctspand.setBaoHanh(textBaohanhAND.getText());
-//                ctspand.setMauSac(textMausacAND.getText());
-//                ctspand.setIMEI(textIMEIAND.getText());
-//                ctspand.setManHinh(textManhinhAND.getText());
-//                ctspand.setRam(textRamAND.getText());
-//                ctspand.setRom(textRomAND.getText());
-//                ctspand.setPin(textPinAND.getText());
-//                ctspand.setThietKe(textThietkeAND.getText());
-//                ctspand.setCamera(textCameraAND.getText());
-//                ctspand.setXuatXu(textXuatxuAND.getText());
-//                ctspand.setKhoiLuong(Float.valueOf(textKhoiluongAND.getText()));
-//                BLLsp.BLLthemct(ctspand);
             }
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(this, "Thông tin không hợp lệ");
@@ -1352,7 +1335,7 @@ public class GUISanPham extends javax.swing.JFrame {
         // TODO add your handling code here:
         int i=tableSPIOS.getSelectedRow();
         if (i>=0){
-            textMaSanPhamIOS.setText(modelIOS.getValueAt(i, 0).toString().trim()); 
+            textMaSanPhamIOS.setText(modelIOS.getValueAt(i, 0).toString().trim());
             textTenSanPhamIOS.setText(modelIOS.getValueAt(i, 1).toString());
             textSoLuongIOS.setText(modelIOS.getValueAt(i, 2).toString());
             textDonGiaIOS.setText(modelIOS.getValueAt(i, 3).toString());

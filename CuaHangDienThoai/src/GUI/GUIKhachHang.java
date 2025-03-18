@@ -27,8 +27,7 @@ public class GUIKhachHang extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         Color col = new Color(51,51,51);
         getContentPane().setBackground(col);
-        loadKHList(); 
-        model = (DefaultTableModel) tableKH.getModel();
+        loadKHList();
     }
 
     /**
@@ -497,7 +496,7 @@ public class GUIKhachHang extends javax.swing.JFrame {
                 textSodienthoaiKH.setText("");
             }
         } catch (NumberFormatException ex) {
-        JOptionPane.showMessageDialog(this, "Thông tin không hợp lệ");
+            JOptionPane.showMessageDialog(this, "Thông tin không hợp lệ");
         }        
     }//GEN-LAST:event_BAddKHActionPerformed
 
